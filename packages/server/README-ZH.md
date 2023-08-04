@@ -20,7 +20,7 @@
     npx flowise start
     ```
 
-3. 打开[http://localhost:3000](http://localhost:3000)
+3. 打开[http://localhost:80](http://localhost:80)
 
 ## 🔒 身份验证
 
@@ -59,7 +59,7 @@ Flowise支持不同的环境变量来配置您的实例。您可以在`packages/
 您还可以在使用`npx`时指定环境变量。例如：
 
 ```
-npx flowise start --PORT=3000 --DEBUG=true
+npx flowise start --PORT=80 --DEBUG=true
 ```
 
 ## 📖 文档

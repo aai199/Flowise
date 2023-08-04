@@ -1038,7 +1038,7 @@ let serverApp: App | undefined
 export async function start(): Promise<void> {
     serverApp = new App()
 
-    const port = parseInt(process.env.PORT || '', 10) || 3000
+    const port = parseInt(process.env.PORT || '', 10) || 80 || 3000
     const server = http.createServer(serverApp.app)
 
     const io = new Server(server, {
