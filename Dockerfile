@@ -1,5 +1,5 @@
 # Build local monorepo image
-# docker build -t  flowise .
+# docker build --no-cache -t  flowise .
 
 # Run image
 # docker run -d -p 3000:3000 flowise
@@ -14,8 +14,6 @@ RUN apk add --no-cache chromium
 
 ENV PUPPETEER_SKIP_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-ENV FLOWISE_USERNAME=aaiflow
-ENV FLOWISE_PASSWORD=IQmcYRnSXwDvVE
 
 WORKDIR /usr/src/packages
 
@@ -38,8 +36,6 @@ COPY . .
 
 RUN yarn build
 
-EXPOSE 80 
-EXPOSE 443
-# EXPOSE 3000
+EXPOSE 3000
 
 CMD [ "yarn", "start" ]
